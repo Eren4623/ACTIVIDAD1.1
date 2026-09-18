@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Temperatura</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .contenedor {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .grupo-campo {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #495057;
+      font-size: 14px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #e67e22;
+    }
+
+    input[readonly] {
+      background-color: #e9ecef;
+      cursor: not-allowed;
+      color: #2b2d42;
+      font-weight: 600;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #e67e22;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #d35400;
+    }
+
+    .mensaje-error {
+      color: #e74c3c;
+      font-size: 13px;
+      margin-top: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <h2>Conversor Celsius a Fahrenheit</h2>
+
+    <form id="formulario-temperatura">
+      <!-- Entrada: Grados Celsius -->
+      <div class="grupo-campo">
+        <label for="celsiusInput">Temperatura en grados Celsius (°C):</label>
+        <input type="text" id="celsiusInput" placeholder="Ej: 25">
+        <span id="errorTexto" class="mensaje-error">Ingresa un valor numérico válido.</span>
+      </div>
+
+      <!-- Botón de acción -->
+      <div class="grupo-campo">
+        <button type="submit" id="btnConvertir">Convertir</button>
+      </div>
+
+      <!-- Salida: Grados Fahrenheit (readonly) -->
+      <div class="grupo-campo">
+        <label for="fahrenheitOutput">Resultado en grados Fahrenheit (°F):</label>
+        <input type="text" id="fahrenheitOutput" readonly placeholder="El resultado aparecerá aquí">
+      </div>
+    </form>
+  </div>
+
+  <script src="js/ejercicio10.js"></script>
+</body>
+</html>

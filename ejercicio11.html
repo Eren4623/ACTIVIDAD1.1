@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="js/ejercicio11.js">
+  <title>Conversor de Distancia</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #495057;
+      font-size: 14px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #3498db;
+    }
+
+    input[readonly] {
+      background-color: #e9ecef;
+      cursor: not-allowed;
+      color: #2b2d42;
+      font-weight: 500;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    .error-msg {
+      color: #e74c3c;
+      font-size: 13px;
+      margin-top: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Conversor de Distancia</h2>
+
+    <form id="formulario-conversion">
+      <!-- Entrada: Kilómetros -->
+      <div class="form-group">
+        <label for="kmInput">Distancia en kilómetros:</label>
+        <input type="text" id="kmInput" placeholder="Ej: 10">
+        <span id="mensajeError" class="error-msg">Por favor ingresa un número válido.</span>
+      </div>
+
+      <!-- Botón de acción -->
+      <div class="form-group">
+        <button type="submit" id="btnConvertir">Convertir</button>
+      </div>
+
+      <!-- Salida: Millas (readonly) -->
+      <div class="form-group">
+        <label for="millasOutput">Resultado en millas:</label>
+        <input type="text" id="millasOutput" readonly placeholder="El resultado aparecerá aquí">
+      </div>
+    </form>
+  </div>
+
+  <!-- Vinculación del script -->
+  <script src="js/ejercicio11.js"></script>
+</body>
+</html>
