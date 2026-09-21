@@ -1,4 +1,3 @@
-
 const formulario = document.getElementById('formulario-temperatura');
 const celsiusInput = document.getElementById('celsiusInput');
 const fahrenheitOutput = document.getElementById('fahrenheitOutput');
