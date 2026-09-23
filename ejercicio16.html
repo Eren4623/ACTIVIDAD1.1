@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Operaciones Básicas</title>
+
+  <!-- SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 40px 15px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333333;
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 22px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: #555555;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    input[type="number"],
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #cccccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 15px;
+    }
+
+    /* Caja de texto de solo lectura */
+    input[readonly] {
+      background-color: #e9ecef;
+      color: #212529;
+      font-weight: bold;
+      cursor: not-allowed;
+      border-color: #ced4da;
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .btn {
+      padding: 12px;
+      font-size: 15px;
+      font-weight: bold;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-suma { background-color: #007bff; }
+    .btn-suma:hover { background-color: #0056b3; }
+
+    .btn-resta { background-color: #6c757d; }
+    .btn-resta:hover { background-color: #545b62; }
+
+    .btn-mult { background-color: #17a2b8; }
+    .btn-mult:hover { background-color: #117a8b; }
+
+    .btn-div { background-color: #fd7e14; }
+    .btn-div:hover { background-color: #dc6502; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 25px 0 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Calculadora Básica (Funciones Flecha)</h2>
+
+    <!-- Formulario con dos campos de entrada -->
+    <div class="form-group">
+      <label for="numero1">Primer número:</label>
+      <input type="number" id="numero1" placeholder="Ingresa un número" step="any">
+    </div>
+
+    <div class="form-group">
+      <label for="numero2">Segundo número:</label>
+      <input type="number" id="numero2" placeholder="Ingresa otro número" step="any">
+    </div>
+
+    <!-- Conjunto de botones de operaciones -->
+    <div class="button-grid">
+      <button type="button" class="btn btn-suma" data-operacion="sumar">Sumar (+)</button>
+      <button type="button" class="btn btn-resta" data-operacion="restar">Restar (−)</button>
+      <button type="button" class="btn btn-mult" data-operacion="multiplicar">Multiplicar (×)</button>
+      <button type="button" class="btn btn-div" data-operacion="dividir">Dividir (÷)</button>
+    </div>
+
+    <hr>
+
+    <!-- Campo de salida de solo lectura -->
+    <div class="form-group">
+      <label for="resultado">Resultado:</label>
+      <input type="text" id="resultado" readonly placeholder="El resultado se mostrará aquí">
+    </div>
+  </div>
+
+  <!-- SweetAlert2 JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Archivo JavaScript propio -->
+  <script src="js/ejercicio16.js"></script>
+</body>
+</html>

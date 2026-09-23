@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Calificaciones</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 30px 15px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h2, h3 {
+      color: #333333;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555555;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    /* Estilo para las cajas de solo lectura */
+    input[readonly] {
+      background-color: #e9ecef;
+      color: #495057;
+      cursor: not-allowed;
+      border-color: #ced4da;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: background-color 0.2s;
+    }
+
+    .btn-add {
+      background-color: #007bff;
+      color: #ffffff;
+    }
+
+    .btn-add:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-calc {
+      background-color: #28a745;
+      color: #ffffff;
+      margin-top: 15px;
+    }
+
+    .btn-calc:hover {
+      background-color: #1e7e34;
+    }
+
+    .list-section {
+      margin: 15px 0;
+      max-height: 140px;
+      overflow-y: auto;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 10px;
+      background-color: #fafafa;
+    }
+
+    .list-section ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list-section li {
+      padding: 6px 0;
+      border-bottom: 1px solid #eeeeee;
+      font-size: 14px;
+      color: #444;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .list-section li:last-child {
+      border-bottom: none;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #dddddd;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Registro de Estudiantes</h2>
+
+    <!-- Formulario para agregar estudiantes -->
+    <div class="form-group">
+      <label for="nombre">Nombre del estudiante:</label>
+      <input type="text" id="nombre" placeholder="Ej. Juan">
+    </div>
+
+    <div class="form-group">
+      <label for="calificacion">Calificación (0 - 100):</label>
+      <input type="number" id="calificacion" placeholder="Ej. 85" min="0" max="100">
+    </div>
+
+    <button type="button" class="btn btn-add" id="btnAgregar">Agregar Estudiante</button>
+
+    <!-- Lista de estudiantes ingresados -->
+    <div class="list-section">
+      <strong>Estudiantes ingresados:</strong>
+      <ul id="listaEstudiantes">
+        <li style="color: #888;">No hay estudiantes agregados.</li>
+      </ul>
+    </div>
+
+    <!-- Botón para procesar -->
+    <button type="button" class="btn btn-calc" id="btnCalcular">Calcular Operaciones</button>
+
+    <hr>
+
+    <!-- Resultados en campos readonly -->
+    <h3>Resultados</h3>
+
+    <div class="form-group">
+      <label for="promedio">Calificación promedio:</label>
+      <input type="text" id="promedio" readonly placeholder="Esperando cálculo...">
+    </div>
+
+    <div class="form-group">
+      <label for="mejorEstudiante">Estudiante con mayor calificación:</label>
+      <input type="text" id="mejorEstudiante" readonly placeholder="Esperando cálculo...">
+    </div>
+
+    <div class="form-group">
+      <label for="peorEstudiante">Estudiante con menor calificación:</label>
+      <input type="text" id="peorEstudiante" readonly placeholder="Esperando cálculo...">
+    </div>
+  </div>
+
+  <!-- Vinculación del script JavaScript -->
+  <script src="js/ejercicio15.js"></script>
+</body>
+</html>
